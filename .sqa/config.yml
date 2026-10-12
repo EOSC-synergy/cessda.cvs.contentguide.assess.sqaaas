@@ -1,60 +1,56 @@
 config:
   credentials: []
   project_repos:
-    bitbucket.org/cessda/cessda.cvs.contentguide:
-      branch: master
-      repo: https://bitbucket.org/cessda/cessda.cvs.contentguide
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.7
+      branch: fix/updatego
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/cessda/cessda.cvs.contentguide:
+      branch: main
+      repo: https://github.com/cessda/cessda.cvs.contentguide
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
 sqa_criteria:
   QC.Acc:
     repos:
-      bitbucket.org/cessda/cessda.cvs.contentguide git:
+      github.com/cessda/cessda.cvs.contentguide git:
         commands:
-        - /usr/bin/env sh .sqa/script.shaggy-amaranth-javanese.sh
-        container: qc.acc_flaky-firebrick-cougar
+        - /usr/bin/env sh .sqa/script.snow_tactful_penguin.sh
+        container: qc.acc_fog_polite_octopus
   QC.Doc:
     repos:
-      bitbucket.org/cessda/cessda.cvs.contentguide find_doc_files.py:
+      github.com/cessda/cessda.cvs.contentguide find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.muzzy-apricot-swan.sh
-        container: qc.doc_freaky-ruby-crane
-      bitbucket.org/cessda/cessda.cvs.contentguide git:
+        - /usr/bin/env sh .sqa/script.steel_rational_quoll.sh
+        container: qc.doc_aquamarine_mysterious_dingo
+      github.com/cessda/cessda.cvs.contentguide git:
         commands:
-        - /usr/bin/env sh .sqa/script.ready-tangerine-shrimp.sh
-        container: qc.doc_droopy-red-fowl
-      bitbucket.org/cessda/cessda.cvs.contentguide markdownlint:
+        - /usr/bin/env sh .sqa/script.lavender_graceful_baboon.sh
+        container: qc.doc_slate_warm_elk
+      github.com/cessda/cessda.cvs.contentguide markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.flaky-mustard-tiger.sh
-        container: qc.doc_gummy-amber-kakapo
-      bitbucket.org/cessda/cessda.cvs.contentguide restructuredtext-lint:
-        commands:
-        - /usr/bin/env sh .sqa/script.clammy-beige-snake.sh
-        container: qc.doc_pretty-denim-chin
+        - /usr/bin/env sh .sqa/script.ceru_persistent_thrush.sh
+        container: qc.doc_cherry_funny_albatross
   QC.Lic:
     repos:
-      bitbucket.org/cessda/cessda.cvs.contentguide licensee:
+      github.com/cessda/cessda.cvs.contentguide licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.hilly-xanthic-cichlid.sh
-        container: qc.lic_skinny-ivory-fowl
+        - /usr/bin/env sh .sqa/script.aqua_bewildered_manta.sh
+        container: qc.lic_fuchsia_foolish_alpaca
   QC.Sty:
     repos:
-      bitbucket.org/cessda/cessda.cvs.contentguide jsonlint:
+      github.com/cessda/cessda.cvs.contentguide jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.greasy-myrtle-mayfly.sh
-        container: qc.sty_hilly-cinnamon-goose
-      bitbucket.org/cessda/cessda.cvs.contentguide rubocop:
+        - /usr/bin/env sh .sqa/script.violet_vibrant_hippopotamus.sh
+        container: qc.sty_ebony_tranquil_stingray
+      github.com/cessda/cessda.cvs.contentguide rubocop:
         commands:
-        - /usr/bin/env sh .sqa/script.greasy-cobalt-capuchin.sh
-        container: qc.sty_stuffy-zucchini-llama
+        - /usr/bin/env sh .sqa/script.lilac_restless_gibbon.sh
+        container: qc.sty_arctic_lively_uakari
   QC.Ver:
     repos:
-      bitbucket.org/cessda/cessda.cvs.contentguide get_git_tags.py:
+      github.com/cessda/cessda.cvs.contentguide get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.squeaky-turquoise-hyrax.sh
-        container: qc.ver_sleazy-dandelion-foxhound
+        - /usr/bin/env sh .sqa/script.mist_adaptable_thrush.sh
+        container: qc.ver_thistle_brave_ocelot
 timeout: 5400
